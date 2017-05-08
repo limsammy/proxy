@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 
-describe ProxyScrape do
+describe ProxyCheck do
   before(:each) do
-    @proxy = ProxyScrape.new('./to_check.txt')
+    @proxy = ProxyCheck.new('./to_check.txt')
   end
 end
