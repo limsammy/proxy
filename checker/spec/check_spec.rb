@@ -11,8 +11,12 @@ describe ProxyCheck do
   end
 
   it 'sanitize method removes newline char from to_check array' do
-    @proxy.to_check.each do |proxy|
-      expect(@proxy.sanitize(proxy)).to_not include("\n")
+    @proxy.sanitize.each do |proxy|
+      expect(proxy).to_not include("\n")
     end
   end
+
+  # it 'can append sanitize method to initialize file > array' do
+  #   @proxy
+  # end
 end
