@@ -7,7 +7,9 @@ class ProxyCheck
     @to_check = File.readlines(path)
   end
 
-  def sanitize(string)
-    string.gsub("\n", '')
+  def sanitize
+    @to_check.map do |string|
+      string.gsub("\n", '')
+    end
   end
 end
