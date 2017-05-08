@@ -12,7 +12,7 @@ describe ProxyCheck do
 
   it 'removes newline char from to_check array' do
     @proxy.to_check.each do |proxy|
-      expect(proxy).to_not include('\n')
+      expect(proxy).to_not include("\n")
     end
   end
 end
