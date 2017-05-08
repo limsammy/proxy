@@ -20,7 +20,9 @@ describe ProxyCheck do
     expect(@proxy.sanitize).to be_instance_of(Array)
   end
 
-  # it 'can append sanitize method to initialize file > array' do
-  #   @proxy
-  # end
+  it 'pings a proxy and returns true or false' do
+    @proxy.sanitize.each do |proxy|
+      expect(proxy.verify?).to be true
+    end
+  end
 end
