@@ -7,5 +7,6 @@ describe ProxyCheck do
 
   it 'reads file into array' do
     expect(@proxy.to_check).to be_instance_of(Array)
+    expect(@proxy.to_check.count).to eq(18)
   end
 end
