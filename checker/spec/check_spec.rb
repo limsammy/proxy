@@ -16,6 +16,10 @@ describe ProxyCheck do
     end
   end
 
+  it 'sanitize method returns array' do
+    expect(@proxy.sanitize).to be_instance_of(Array)
+  end
+
   # it 'can append sanitize method to initialize file > array' do
   #   @proxy
   # end
