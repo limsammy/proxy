@@ -1,3 +1,5 @@
+require 'pry'
+
 class ProxyCheck
   attr_reader :to_check
 
