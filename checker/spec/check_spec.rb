@@ -20,9 +20,9 @@ describe ProxyCheck do
     expect(@proxy.sanitize).to be_instance_of(Array)
   end
 
-  it 'pings a single proxy and returns true or false' do
+  it 'pings a single proxy and returns true or nil' do
     @proxy.sanitize.each do |proxy|
-      expect(proxy.verify?).to be true
+      expect(@proxy.verify?(proxy)).to be nil
     end
   end
 end

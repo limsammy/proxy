@@ -1,4 +1,5 @@
 require 'pry'
+require 'net/ping'
 
 class ProxyCheck
   attr_reader :to_check
@@ -11,5 +12,11 @@ class ProxyCheck
     @to_check.map do |string|
       string.gsub("\n", '')
     end
+  end
+
+  def verify?(proxy)
+    host, port = proxy.split(':')
+    binding.pry
+    return Net::Ping::TCP.new(host, port).ping
   end
 end
