@@ -34,7 +34,11 @@ class ProxyCheck
   def check_all(list = @to_check)
     list.map do |proxy|
       host, port = proxy.split(':')
-      valid?(host, port)
+      if valid?(host, port)
+        output = File.open("./working.txt", "w")
+        output << proxy
+        output.close
+      end
     end
   end
 end

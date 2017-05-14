@@ -21,6 +21,11 @@ describe ProxyCheck do
 
   it 'pings all proxies and returns array of true or false' do
     @proxy.check_all
-    expect(@proxy.check_all).to be nil
+    expect(@proxy.check_all).to be_instance_of(Array)
+  end
+
+  it 'exports working proxies to a file' do
+    @proxy.check_all
+    expect(File).to exist('./working.txt')
   end
 end
