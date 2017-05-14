@@ -7,7 +7,6 @@ describe ProxyCheck do
 
   it 'reads file into array' do
     expect(@proxy.to_check).to be_instance_of(Array)
-    expect(@proxy.to_check.count).to eq(18)
   end
 
   it 'sanitize method removes newline char from to_check array' do
@@ -20,9 +19,8 @@ describe ProxyCheck do
     expect(@proxy.sanitize).to be_instance_of(Array)
   end
 
-  it 'pings a single proxy and returns true or nil' do
-    @proxy.sanitize.each do |proxy|
-      expect(@proxy.verify?(proxy)).to be nil
-    end
+  it 'pings all proxies and returns array of true or false' do
+    @proxy.check_all
+    expect(@proxy.check_all).to be nil
   end
 end
